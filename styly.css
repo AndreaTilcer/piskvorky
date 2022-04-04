@@ -7,19 +7,21 @@
 
 .container {
   background-image: linear-gradient(#615dad, #ffc8da);
-  background-attachment: fixed;
   background-color: #ffc8da;
   color: #ffffff;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-attachment: fixed;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 div {
   width: 400px;
   position: relative;
   display: block;
+
   flex-direction: column;
   background-color: #283e50;
   justify-content: center;
@@ -27,6 +29,11 @@ div {
   font-size: 19px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.pravidla-titulek {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 .image-title {
@@ -40,7 +47,6 @@ div {
 h1 {
   font-family: 'Lobster', cursive;
   font-size: 48px;
-  padding-top: 10px;
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -48,9 +54,10 @@ h1 {
 
 .popis {
   display: flex;
-  width: 360px;
+  width: 400px;
   margin-bottom: 40px;
-  padding-right: 5px;
+  padding-right: 30px;
+  padding-left: 15px;
 }
 
 .uvodni-popis {
@@ -103,7 +110,6 @@ a:hover {
 }
 
 .instrukce-image {
-  width: 350px;
   max-width: 100%;
   display: block;
   justify-content: center;
@@ -114,10 +120,54 @@ a:hover {
 .popis-obrazku {
   text-align: center;
   margin-bottom: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .ikony {
   width: 1em;
   height: 1em;
   filter: invert(100%);
+}
+
+@media (min-width: 650px) {
+  div {
+    width: 600px;
+  }
+
+  .image-title {
+    width: 600px;
+  }
+
+  .popis {
+    width: 600px;
+  }
+
+  .pravidla {
+    width: 600px;
+  }
+
+  .start {
+    width: 600px;
+  }
+
+  div.pravidla:hover {
+    width: 600px;
+  }
+
+  div.start:hover {
+    width: 600px;
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .popis-obrazku {
+    width: calc(90% / 2);
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

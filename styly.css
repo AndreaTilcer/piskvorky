@@ -1,17 +1,19 @@
 *,
-::after,
-::before {
-  box-sizing: inherit;
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-body {
+.container {
   background-image: linear-gradient(#615dad, #ffc8da);
   background-attachment: fixed;
   background-color: #ffc8da;
   color: #ffffff;
-  text-align: center;
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  background-attachment: fixed;
 }
 
 div {
@@ -27,8 +29,7 @@ div {
   margin-right: auto;
 }
 
-img {
-  display: flex;
+.image-title {
   width: 400px;
   display: block;
   border-top-left-radius: 7px;
@@ -40,30 +41,38 @@ h1 {
   font-family: 'Lobster', cursive;
   font-size: 48px;
   padding-top: 10px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .popis {
   display: flex;
   width: 360px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 40px;
+  padding-right: 5px;
+}
+
+.uvodni-popis {
+  text-align: center;
 }
 
 .pravidla {
   background-color: #1fcca4;
   width: 400px;
-  height: 40px;
+  height: 50px;
   border-top: 1px solid #283e50;
   padding-top: 12px;
+  text-align: center;
 }
 
 .start {
   background-color: #0197f6;
   width: 400px;
-  height: 40px;
+  height: 50px;
   border-top: 1px solid #283e50;
   padding-top: 12px;
+  text-align: center;
 }
 
 a:link {
@@ -74,13 +83,13 @@ a:link {
 div.pravidla:hover {
   background-color: #1cbb96;
   width: 400px;
-  height: 40px;
+  height: 50px;
 }
 
 div.start:hover {
   background-color: #0090e9;
   width: 400px;
-  height: 40px;
+  height: 50px;
 }
 
 a:visited {
@@ -91,4 +100,24 @@ a:visited {
 a:hover {
   color: white;
   text-decoration: none;
+}
+
+.instrukce-image {
+  width: 350px;
+  max-width: 100%;
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popis-obrazku {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ikony {
+  width: 1em;
+  height: 1em;
+  filter: invert(100%);
 }

@@ -262,3 +262,10 @@ button {
   background-size: 75%;
   transition: background-size 0.15s;
 }
+
+.policko--cross {
+  background-image: url('cross.svg');
+}
+.policko--circle {
+  background-image: url('circle.svg');
+}

@@ -14,12 +14,16 @@ const hraje = (event) => {
 
   if (isWinningMove(event.target)) {
     if (player === 'cross') {
-      const question = confirm('Hráč, který měl kolečka, vyhrává!');
+      const question = confirm(
+        'Hráč, který měl kolečka, vyhrává! Přejete si spustit další hru?',
+      );
       if (question === true) {
         location.reload();
       }
     } else {
-      const question = confirm('Hráč, který měl křížek, vyhrává!');
+      const question = confirm(
+        'Hráč, který měl křížek, vyhrává! Přejete si spustit další hru?',
+      );
       if (question === true) {
         location.reload();
       }

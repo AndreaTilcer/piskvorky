@@ -188,8 +188,9 @@ a:hover {
 }
 
 .ikony-hra {
-  padding-left: 300px;
+  padding-left: 28vmin;
   margin-bottom: 20px;
+  flex-wrap: nowrap;
 }
 
 button {

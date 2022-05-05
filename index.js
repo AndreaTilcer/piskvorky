@@ -14,9 +14,15 @@ const hraje = (event) => {
 
   if (isWinningMove(event.target)) {
     if (player === 'cross') {
-      confirm('Hráč, který měl kolečka, vyhrává!');
+      const question = confirm('Hráč, který měl kolečka, vyhrává!');
+      if (question === true) {
+        location.reload();
+      }
     } else {
-      confirm('Hráč, který měl křížek vyhrává!');
+      const question = confirm('Hráč, který měl křížek, vyhrává!');
+      if (question === true) {
+        location.reload();
+      }
     }
   }
 };
@@ -98,6 +104,67 @@ const isWinningMove = (policko) => {
   }
 
   if (inColumn >= symbolsToWin) {
+    return true;
+  }
+
+  let c;
+  let inDiagonalRight = 1;
+
+  // Koukni doleva nahoru
+  i = origin.row;
+  c = origin.column;
+  while (i > 0 && c > 0 && symbol === getSymbol(getField(i - 1, c - 1))) {
+    inDiagonalRight++;
+    i--;
+    c--;
+  }
+
+  // Koukni doprava dolu
+  i = origin.row;
+  c = origin.column;
+  while (
+    i < boardSize - 1 &&
+    c < boardSize - 1 &&
+    symbol === getSymbol(getField(i + 1, c + 1))
+  ) {
+    inDiagonalRight++;
+    i++;
+    c++;
+  }
+
+  if (inDiagonalRight >= symbolsToWin) {
+    return true;
+  }
+
+  let inDiagonalLeft = 1;
+
+  // Koukni doleva dolu
+  i = origin.row;
+  c = origin.column;
+  while (
+    i < boardSize - 1 &&
+    c > 0 &&
+    symbol === getSymbol(getField(i + 1, c - 1))
+  ) {
+    inDiagonalLeft++;
+    i++;
+    c--;
+  }
+
+  // Koukni doprava nahoru
+  i = origin.row;
+  c = origin.column;
+  while (
+    i > 0 &&
+    c < boardSize - 1 &&
+    symbol === getSymbol(getField(i - 1, c + 1))
+  ) {
+    inDiagonalLeft++;
+    i--;
+    c++;
+  }
+
+  if (inDiagonalLeft >= symbolsToWin) {
     return true;
   }
 
